@@ -1,0 +1,274 @@
+/* Color Palette
+    Get color palette from: https://coolors.co/
+    https://coolors.co/553d36-684a52-857885-87a0b2-a4bef3
+*/
+
+/* ------------------------------------------------------------------------------
+Custom Properties/Variables */
+
+:root {
+    --dark-brown: #553D36;
+    --light-purple: #684A52;
+    --old-silver: #857885;
+    --cadet-gray: #87A0B2;
+    --baby-blue: #A4BEF3;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+/* End of Custom Properties/Variables
+------------------------------------------------------------------------------*/
+
+/* ------------------------------------------------------------------------------
+Global styles */
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: var(--baby-blue);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* End of Global styles
+------------------------------------------------------------------------------*/
+
+/* ------------------------------------------------------------------------------
+Navigation styles */
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--light-purple);
+}
+
+.nav-list {
+    display: flex;    
+    list-style: none;
+}
+
+.nav-list a {
+    display: block;
+    font-size: 1.5rem;
+    padding: 2rem;
+    text-decoration: none;
+    color: var(--baby-blue);
+  }
+
+  .nav-list a:hover {
+      background: var(--baby-blue);
+      color: var(--dark-brown);
+  }
+
+/* End of Navigation styles
+------------------------------------------------------------------------------*/
+
+/* ------------------------------------------------------------------------------
+Header and Footer styles */
+
+/* header */
+
+
+
+/* footer */
+
+.content-wrap {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 5rem 7rem;
+    overflow: auto;
+}
+
+.contact {
+    text-align: center;
+    background-color: var(--dark-brown);
+    position: absolute;
+    left: 0;
+    right: 0;
+    color: var(--cadet-gray);
+}
+
+.contact h2 {
+    font-weight: lighter;
+}
+
+.contact a {
+    color: var(--baby-blue);   
+    border-radius: 50%; 
+}
+  
+.contact a:hover {
+    background-color: var(--baby-blue);
+    color: var(--dark-brown);
+}
+  
+.contact-info a {
+    /* background: white; */
+    padding: 2rem;
+    display: inline-block;
+    font-size: 30px;
+    /* margin: 0px 20px 20px; */
+    margin: 2rem;
+}
+
+/* End of Header and Footer styles
+------------------------------------------------------------------------------*/
+
+/* ------------------------------------------------------------------------------
+Main styles */
+
+/* ------------------------------------------------------------------------------
+Welcome styles */
+
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* background-color: #000; */
+    background-image: linear-gradient(62deg, var(--dark-brown), var(--light-purple), var(--old-silver), var(--cadet-gray), var(--baby-blue));
+}
+
+.welcome-section h1 {
+    font-size: 3rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.welcome-name {
+    font-size: 1.5em;    
+}
+
+.welcome-section h2 {
+    font-style: italic;
+    padding: 15px;
+    font-weight: lighter;
+}
+
+/* End of Welcome styles
+------------------------------------------------------------------------------*/
+
+/* ------------------------------------------------------------------------------
+Projects Section styles */
+
+.projects-section {
+    text-align: center;
+    padding: 10rem 2rem;
+    /* background: var(--main-blue); */
+}
+
+.projects-section-header {
+    font-size: 2.5rem;
+    max-width: 640px;
+    margin: 0 auto 6rem auto;
+    border-bottom: 0.2rem solid var(--dark-brown);
+    font-weight: lighter;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-gap: 4rem;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 6rem;
+}
+
+.code {
+    color: var(--dark-brown);
+    transition: color 0.3s ease-out;
+}
+
+.project:hover .code {
+    color: var(--baby-blue);
+}
+
+.project-image {
+    height: calc(100% - 6.8rem);
+    width: 100%;
+    object-fit: cover;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+.project-title {
+    font-size: 2rem;
+    padding: 2rem 0.5rem;
+    color: var(--baby-blue);
+}
+
+.project-tile {
+    background: var(--dark-brown);
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+}
+
+.btn-show-all {
+    color: var(--baby-blue);
+    font-size: 2rem;
+    background: var(--dark-brown);
+    transition: background 0.3s ease-out;
+}
+
+.btn-show-all:hover {
+    background: var(--old-silver);
+}
+
+.btn-show-all:hover > i {
+    transform: translateX(2px);
+}
+
+.btn-show-all > i {
+    margin-left: 10px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+}
+
+/* End of Projects Section styles
+------------------------------------------------------------------------------*/
+
+/* End of Main styles
+------------------------------------------------------------------------------*/
+
+/* ------------------------------------------------------------------------------
+Media Queries */
+
+@media (max-width: 30.625em) {
+    .projects-section {
+      padding: 6rem 1rem;
+    }
+  
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+/* End of Media Queries
+------------------------------------------------------------------------------*/
